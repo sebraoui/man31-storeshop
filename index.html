@@ -23,7 +23,8 @@ nav a{color:#aaa;margin:0 10px;text-decoration:none;font-size:14px}
 nav a:hover{color:#fff}
 .cart{cursor:pointer;background:#1a1a25;padding:8px 12px;border-radius:10px}
 .hero{
-  height:100vh;
+  min-height:100vh;
+}
   display:flex;
   align-items:center;
   justify-content:center;
@@ -155,7 +156,44 @@ nav a:hover{color:#fff}
   background: radial-gradient(circle, rgba(0,100,255,0.2), transparent 60%);
   animation: move 8s infinite linear;
 }
+@media (max-width:768px){
 
+/* NAV */
+header{
+  flex-direction:column;
+  gap:10px;
+}
+
+/* HERO */
+.hero h1{
+  font-size:32px;
+}
+
+.hero p{
+  font-size:14px;
+}
+
+/* GRID */
+.grid{
+  grid-template-columns:1fr 1fr;
+}
+
+/* CART */
+#cartBox{
+  width:100%;
+}
+
+/* BUTTONS */
+button{
+  width:100%;
+}
+
+/* HERO BUTTONS */
+.hero-buttons{
+  flex-direction:column;
+}
+
+}
 @keyframes move{
   0%{transform:translate(-20%,-20%)}
   50%{transform:translate(10%,10%)}
