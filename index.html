@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAN 31 </title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+body{font-family:'Inter',Arial;margin:0;background:#0b0b0f;color:#fff}
+
+header{
+display:flex;justify-content:space-between;align-items:center;
+padding:18px 30px;position:sticky;top:0;
+background:rgba(10,10,15,0.85);backdrop-filter:blur(10px);
+border-bottom:1px solid #1f1f2a;z-index:1000
+}
+
+.logo{display:flex;align-items:center;gap:10px;font-weight:700}
+.logo img{width:40px;height:40px;border-radius:8px}
+nav a{color:#aaa;margin:0 10px;text-decoration:none;font-size:14px}
+nav a:hover{color:#fff}
+.cart{cursor:pointer;background:#1a1a25;padding:8px 12px;border-radius:10px}
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+
+  background:
+    linear-gradient(120deg, rgba(0,20,80,0.8), rgba(0,0,0,0.9)),
+    url("your-image.jpg");
+
+  background-size:cover;
+  background-position:center;
+}
+
+/* animation overlay moving */
+.hero{
+  height:100vh;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+/* 🎥 الفيديو */
+.hero-video{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
+}
+
+/* 🖤 overlay */
+.hero::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9));
+  z-index:-1;
+}
+
+/* ✨ glow animation */
+.hero::before{
+  content:"";
+  position:absolute;
+  width:200%;
+  height:200%;
+  background:radial-gradient(circle, rgba(0,150,255,0.2), transparent 60%);
+  animation:move 10s infinite linear;
+  z-index:0;
+}
+
+@keyframes move{
+  0%{transform:translate(-20%,-20%)}
+  50%{transform:translate(10%,10%)}
+  100%{transform:translate(-20%,-20%)}
+}
+
+/* content */
+.hero-content{
+  z-index:2;
+  animation:fadeUp 1.5s ease;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.hero h1{
+  font-size:70px;
+  letter-spacing:3px;
+  margin:0;
+}
+
+.hero p{
+  color:#aaa;
+  margin-top:10px;
+  font-size:20px;
+}
+
+/* buttons */
+.hero-buttons{
+  margin-top:25px;
+  display:flex;
+  gap:10px;
+  justify-content:center;
+}
+
+.hero button{
+  padding:12px 22px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.hero button:first-child{
+  background:#fff;
+  color:#000;
+}
+
+.hero button:first-child:hover{
+  transform:scale(1.1);
+}
+
+.hero .ghost{
+  background:transparent;
+  border:1px solid #fff;
+  color:#fff;
+}
+
+.hero .ghost:hover{
+  background:#fff;
+  color:#000;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  width:200%;
+  height:200%;
+  background: radial-gradient(circle, rgba(0,100,255,0.2), transparent 60%);
+  animation: move 8s infinite linear;
+}
+
+@keyframes move{
+  0%{transform:translate(-20%,-20%)}
+  50%{transform:translate(10%,10%)}
+  100%{transform:translate(-20%,-20%)}
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.hero h1{
+  font-size:60px;
+  margin:0;
+  letter-spacing:2px;
+}
+
+.hero p{
+  color:#aaa;
+  margin-top:10px;
+  font-size:18px;
+}
+
+.hero-buttons{
+  margin-top:20px;
+  display:flex;
+  gap:10px;
+  justify-content:center;
+}
+
+.hero button{
+  padding:12px 20px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+/* primary button */
+.hero button:first-child{
+  background:#fff;
+  color:#000;
+}
+
+.hero button:first-child:hover{
+  transform:scale(1.05);
+}
+
+/* ghost button */
+.hero .ghost{
+  background:transparent;
+  border:1px solid #fff;
+  color:#fff;
+}
+
+.hero .ghost:hover{
+  background:#fff;
+  color:#000;
+}
+.hero{height:70vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+background:radial-gradient(circle,#1a1a2e,#0b0b0f)}
+.hero h1{font-size:42px}
+.hero p{color:#aaa}
+
+section{padding:50px 25px}
+.title{text-align:center;margin-bottom:20px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.product{background:#141420;border:1px solid #222;border-radius:15px;padding:12px;cursor:pointer;transition:.3s}
+.product:hover{transform:translateY(-5px)}
+.product img{width:100%;height:180px;object-fit:cover;border-radius:12px}
+button{background:#fff;color:#000;border:none;padding:10px;border-radius:10px;margin-top:8px;cursor:pointer;font-weight:600}
+
+/* CART */
+#cartBox{
+position:fixed;right:-380px;top:0;width:330px;height:100%;
+background:#111;border-left:1px solid #333;
+padding:15px;transition:.4s;overflow:auto
+}
+#cartBox.active{right:0}
+
+#overlay{
+position:fixed;top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,.6);display:none
+}
+#overlay.active{display:block}
+
+.cart-item{display:flex;justify-content:space-between;margin:8px 0;padding:6px;background:#1a1a25;border-radius:8px}
+
+.summary{margin-top:15px;padding-top:10px;border-top:1px solid #333}
+
+.delivery{
+color:#0f0;margin-top:5px;font-size:14px
+}
+input,textarea{
+  width:100%;
+  padding:10px;
+  margin:6px 0;
+  border-radius:10px;
+  border:none;
+  background:#1a1a25;
+  color:#fff;
+}
+
+/* MODAL */
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;display:none;
+background:rgba(0,0,0,.7);align-items:center;justify-content:center}
+.modal.active{display:flex}
+.modal-content{background:#141420;padding:20px;border-radius:15px;width:300px}
+
+.footer{
+  background:#111;
+  padding:30px;
+  text-align:center;
+  border-top:1px solid #333;
+  margin-top:40px;
+}
+
+.location{
+  margin-bottom:15px;
+  color:#aaa;
+  font-size:14px;
+}
+
+.social a{
+  color:#fff;
+  margin:0 10px;
+  text-decoration:none;
+  font-size:14px;
+  transition:0.3s;
+}
+
+.social a:hover{
+  color:#25D366;
+}
+</style>
+</head>
+
+<body>
+
+
+<header>
+<div class="logo"><img src="logo.png">MAN 31</div>
+<nav>
+<a href="#shoes">Shoes</a>
+<a href="#pants">Pants</a>
+<a href="#shirts">Shirts</a>
+</nav>
+<div class="cart" onclick="toggleCart()">🛒 <span id="count">0</span></div>
+</header>
+
+<div id="overlay" onclick="toggleCart()"></div>
+
+<section class="hero">
+  
+  <!-- 🎥 فيديو خلفية -->
+  <video autoplay muted loop class="hero-video">
+    <source src="video.mp4" type="video/mp4">
+  </video>
+
+  <!-- 🔥 المحتوى -->
+  <div class="hero-content">
+    <h1>MAN 31</h1>
+    <p>Premium Streetwear Experience</p>
+
+    <div class="hero-buttons">
+      <button onclick="document.getElementById('shoes').scrollIntoView()">
+        Shop Now
+      </button>
+
+      <button class="ghost">Explore</button>
+    </div>
+  </div>
+
+</section>
+<p>WELCOM TO</p> 
+<h1>MAN 31</h1>
+
+</section>
+
+<section id="shoes"><h2 class="title">Shoes</h2><div class="grid" id="shoesGrid"></div></section>
+<section id="pants"><h2 class="title">Pants</h2><div class="grid" id="pantsGrid"></div></section>
+<section id="shirts"><h2 class="title">Shirts</h2><div class="grid" id="shirtsGrid"></div></section>
+
+<!-- CART -->
+<div id="cartBox">
+  <h3>Cart</h3>
+
+  <div id="list"></div>
+
+  <div style="margin-top:15px;border-top:1px solid #333;padding-top:10px">
+    <p id="total">Total: 0 MAD</p>
+    <p id="final">Final: 0 MAD</p>
+
+   <button onclick="openUserModal()" style="width:100%;margin-top:10px">
+Send Order
+</button>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-content">
+<h3 id="mName"></h3>
+<p id="mPrice"></p>
+<p>Sizes: S M L XL</p>
+<button onclick="addModal()">Add</button>
+<button onclick="closeModal()">Close</button>
+</div>
+</div>
+
+<a href="https://wa.me/212600000000" style="position:fixed;bottom:20px;right:20px;background:#25D366;padding:15px;border-radius:50%">💬</a>
+<div class="modal" id="userModal">
+  <div class="modal-content">
+
+    <h3>📦 معلومات الطلب</h3>
+
+    <input id="name" placeholder="الإسم">
+    <input id="phone" placeholder="رقم الهاتف">
+    <textarea id="address" placeholder="العنوان"></textarea>
+
+    <button onclick="confirmOrder()">📲 إرسال الطلب</button>
+    <button onclick="closeUserModal()">❌ إلغاء</button>
+
+  </div>
+</div>
+
+<script>
+let cart=[];
+let selected={};
+const delivery=20;
+
+const shoes=Array.from({length:15},(_,i)=>({name:"Shoe "+(i+1),price:200+i*10}));
+const pants=Array.from({length:15},(_,i)=>({name:"Pant "+(i+1),price:150+i*10}));
+const shirts=Array.from({length:15},(_,i)=>({name:"Shirt "+(i+1),price:100+i*10}));
+
+function render(){renderGrid("shoesGrid",shoes);renderGrid("pantsGrid",pants);renderGrid("shirtsGrid",shirts);}
+
+function renderGrid(id,items){
+document.getElementById(id).innerHTML=items.map(p=>`
+<div class='product' onclick='openModal("${p.name}",${p.price})'>
+<img src='https://via.placeholder.com/300'>
+<h4>${p.name}</h4>
+<p>${p.price} MAD</p>
+</div>`).join('');}
+
+function openModal(name,price){selected={name,price};document.getElementById('mName').innerText=name;document.getElementById('mPrice').innerText=price+" MAD";document.getElementById('modal').classList.add('active');}
+function closeModal(){document.getElementById('modal').classList.remove('active');}
+function openUserModal(){
+  if(cart.length==0){
+    alert("🛒 السلة فارغة");
+    return;
+  }
+  document.getElementById("userModal").classList.add("active");
+}
+function addModal(){cart.push(selected);updateCart();closeModal();}
+
+function toggleCart(){document.getElementById('cartBox').classList.toggle('active');document.getElementById('overlay').classList.toggle('active');updateCart();}
+
+function updateCart(){
+let list=document.getElementById('list');
+list.innerHTML="";
+let total=0;
+
+cart.forEach((p,i)=>{
+list.innerHTML+=`<div class='cart-item'>${p.name}<span>${p.price} MAD</span></div>`;
+total+=p.price;
+});
+
+document.getElementById('count').innerText=cart.length;
+
+let final=total+delivery;
+
+document.getElementById('total').innerText="Total: "+total+" MAD";
+document.getElementById('final').innerText="Final: "+final+" MAD";
+}
+
+function closeUserModal(){
+  document.getElementById("userModal").classList.remove("active");
+}
+
+function confirmOrder(){
+
+let name=document.getElementById('name').value;
+let phone=document.getElementById('phone').value;
+let address=document.getElementById('address').value;
+
+if(name=="" || phone=="" || address==""){
+  alert("⚠️ عفاك عمر جميع المعلومات");
+  return;
+}
+
+let msg="طلب جديد:%0A";
+let total=0;
+
+cart.forEach(p=>{
+  msg+="- "+p.name+" "+p.price+" MAD%0A";
+  total+=p.price;
+});
+
+msg+=`%0Aالاسم: ${name}%0Aالهاتف: ${phone}%0Aالعنوان: ${address}%0A`;
+msg+=`%0ATotal: ${total} MAD`;
+
+window.open("https://wa.me/212600000000?text="+encodeURIComponent(msg));
+
+closeUserModal();
+}
+
+function sendWhatsApp(){
+if(cart.length==0){alert("Cart empty");return;}
+let msg="Order:%0A";
+cart.forEach(p=>msg+="- "+p.name+" "+p.price+" MAD%0A");
+window.open("https://wa.me/212600000000?text="+encodeURIComponent(msg));
+}
+
+render();
+
+
+
+</script>
+
+<footer class="footer">
+
+  <div class="location">
+    📍 موقعنا: سلا - المغرب
+  </div>
+
+  <div class="social">
+    <a href="https://facebook.com" target="_blank">📘 Facebook</a>
+    <a href="https://instagram.com" target="_blank">📸 Instagram</a>
+    <a href="https://tiktok.com" target="_blank">🎵 TikTok</a>
+    <a href="https://wa.me/212600000000" target="_blank">💬 WhatsApp</a>
+  </div>
+
+</footer>
+</body>
+</html>
+
